@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">NetHelper</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="device_fragment_label">Device Fragment</string>
+    <string name="setting_device_fragment_label">Device Setting Fragment</string>
+    <string name="setting_device_instruction_fragment_label">Device Setting Instruction Fragment</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
