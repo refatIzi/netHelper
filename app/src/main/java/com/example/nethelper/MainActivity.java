@@ -2,24 +2,12 @@ package com.example.nethelper;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-
-import com.example.nethelper.device.Device;
-import com.example.nethelper.device.DeviceAdapter;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
-
-import androidx.navigation.ui.AppBarConfiguration;
-
 import com.example.nethelper.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainActivityInterface {
 
