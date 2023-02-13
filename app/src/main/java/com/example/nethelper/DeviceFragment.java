@@ -37,8 +37,10 @@ public class DeviceFragment extends Fragment implements AdapterView.OnItemClickL
 
         binding = FragmentDeviceBinding.inflate(inflater, container, false);
         devices.add(new Device("Cisco"));
+        devices.add(new Device("Cisco ASA"));
+        devices.add(new Device("Cisco FMC"));
         devices.add(new Device("Foxgate"));
-        devices.add(new Device("Microtik"));
+        devices.add(new Device("Mikrotik"));
         deviceAdapter = new DeviceAdapter(context, R.layout.iteam_device,devices);
         binding.listDevice.setAdapter(deviceAdapter);
         binding.listDevice.setOnItemClickListener(this);

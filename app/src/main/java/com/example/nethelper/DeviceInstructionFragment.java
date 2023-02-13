@@ -2,17 +2,24 @@ package com.example.nethelper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.app.Fragment;
 
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.example.nethelper.databinding.FragmentDeviceInstructionBinding;
+
+import java.io.File;
+import java.net.URL;
 
 
 @SuppressLint("ValidFragment")
@@ -34,53 +41,14 @@ public class DeviceInstructionFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }*/
-
+   public String fileName = "myfile.html";
+   ///Users/sirius/AndroidStudioProjects/NetHelper/app/instructions
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentDeviceInstructionBinding.inflate(inflater, container, false);
-        binding.instruction.setText("І\n" +
-                "\n" +
-                "Кохайтеся, чорнобриві,\n" +
-                "\n" +
-                "Та не з москалями,\n" +
-                "\n" +
-                "Бо москалі — чужі люде,\n" +
-                "\n" +
-                "Роблять лихо з вами.\n" +
-                "\n" +
-                "Москаль любить жартуючи,\n" +
-                "\n" +
-                "Жартуючи кине;\n" +
-                "\n" +
-                "Піде в свою Московщину,\n" +
-                "\n" +
-                "А дівчина гине...\n" +
-                "\n" +
-                "Якби сама, ще б нічого,\n" +
-                "\n" +
-                "А то й стара мати,\n" +
-                "\n" +
-                "Що привела на світ Божий,\n" +
-                "\n" +
-                "Мусить погибати.\n" +
-                "\n" +
-                "Серце в’яне співаючи,\n" +
-                "\n" +
-                "Коли знає, за що;\n" +
-                "\n" +
-                "Люде серця не побачать,\n" +
-                "\n" +
-                "А скажуть — ледащо!\n" +
-                "\n" +
-                "Кохайтеся ж, чорнобриві,\n" +
-                "\n" +
-                "Та не з москалями,\n" +
-                "\n" +
-                "Бо москалі — чужі люде,\n" +
-                "\n" +
-                "Згнущаються вами.");
-        // Inflate the layout for this fragment
+        binding.instruction.getSettings().setJavaScriptEnabled(true);
+        binding.instruction.loadUrl("file:///android_asset/asa/VRFCiscoAsa.html");
         return binding.getRoot();
     }
 }
