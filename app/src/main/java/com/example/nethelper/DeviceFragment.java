@@ -62,6 +62,6 @@ public class DeviceFragment extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mainActivityInterface.deviceSetting(deviceAdapter.getItem(position).getDevice());
+        mainActivityInterface.deviceSetting(deviceAdapter.getItem(position).getDeviceObject());
     }
 }

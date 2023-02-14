@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+
 import android.app.Fragment;
 
 import com.example.nethelper.databinding.FragmentSettingDeviceBinding;
+import com.example.nethelper.device.Device;
 import com.example.nethelper.setting.Setting;
 import com.example.nethelper.setting.SettingAdapter;
 
@@ -29,19 +31,23 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
 
     private FragmentSettingDeviceBinding binding;
     Context context;
-    private String device;
+    private Object device;
 
     private SettingAdapter settingAdapter;
     private List<Setting> strings = new ArrayList<>();
     private ListView listView;
-    public DeviceSettingFragment(Context context,String device){
-        this.context = context;
-        this.device=device;
-       this. mainActivityInterface=( MainActivityInterface)context;
 
-      //  Toast.makeText(context, "Device name "+device, Toast.LENGTH_LONG).show();
+    public DeviceSettingFragment(Context context, Object device) {
+        this.context = context;
+        this.device = device;
+        this.mainActivityInterface = (MainActivityInterface) context;
+
+
+        Toast.makeText(context, "" + device, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(context, "Device name "+device, Toast.LENGTH_LONG).show();
 
     }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(
@@ -58,13 +64,15 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showSetting(String setting) {
-        strings.add(new Setting("Create New Inrerface"));
-        strings.add(new Setting("Create Vlans"));
-        strings.add(new Setting("Create VPN"));
+        String[] settings = Device.setDeviceObject(device.toString());
+        for (int i = 0; i < settings.length; i++) {
+            strings.add(new Setting(settings[i]));
+        }
         settingAdapter = new SettingAdapter(context, R.layout.iteam_setting, strings);
         binding.listSettingView.setAdapter(settingAdapter);
         //listView.setAdapter(settingAdapter);
     }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -79,7 +87,7 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-      //  Toast.makeText(context,"Setting name"+settingAdapter.getItem(position).getSetting(),Toast.LENGTH_LONG).show();
+        //  Toast.makeText(context,"Setting name"+settingAdapter.getItem(position).getSetting(),Toast.LENGTH_LONG).show();
         mainActivityInterface.deviceInstruction("");
 
     }

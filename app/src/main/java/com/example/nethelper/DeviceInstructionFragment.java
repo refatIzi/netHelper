@@ -30,7 +30,7 @@ public class DeviceInstructionFragment extends Fragment {
         binding = FragmentDeviceInstructionBinding.inflate(inflater, container, false);
         //binding.instruction.getSettings().setJavaScriptEnabled(true);
 
-        binding.instruction.loadUrl("file:///android_asset/asa/VRFCiscoAsa.html");
+        binding.instruction.loadUrl("file:///android_asset/cisco/asa/CiscoVRF.html");
         return binding.getRoot();
     }
 }

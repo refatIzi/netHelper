@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
     private FragmentTransaction deviceInstructionFragment;
     private DeviceInstructionFragment deviceInstructionFragmentActivity;
     private String frame;
+    private Object device;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
             @Override
             public void onClick(View view) {
                 if (frame.equals("DeviceInstruction"))
-                    deviceSetting("");
+                    deviceSetting(device);
                 else if (frame.equals("DeviceSetting")) device();
             }
         });
     }
-
     public void device() {
         frame = "Device";
         deviceFragment = getFragmentManager().beginTransaction();
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
         deviceFragment.commit();
     }
 
-    public void deviceSetting(String device) {
+    public void deviceSetting(Object device) {
+        this.device=device;
         frame = "DeviceSetting";
         deviceSettingFragment = getFragmentManager().beginTransaction();
         deviceSettingFragmentActivity = new DeviceSettingFragment(MainActivity.this, device);
