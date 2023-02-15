@@ -2,6 +2,7 @@ package com.example.nethelper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,11 +29,9 @@ import java.util.List;
 public class DeviceSettingFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     MainActivityInterface mainActivityInterface;
-
     private FragmentSettingDeviceBinding binding;
     Context context;
     private Object device;
-
     private SettingAdapter settingAdapter;
     private List<Setting> strings = new ArrayList<>();
     private ListView listView;
@@ -41,11 +40,8 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
         this.context = context;
         this.device = device;
         this.mainActivityInterface = (MainActivityInterface) context;
-
-
-        Toast.makeText(context, "" + device, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "" + device.toString().toLowerCase(), Toast.LENGTH_SHORT).show();
         //  Toast.makeText(context, "Device name "+device, Toast.LENGTH_LONG).show();
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -54,19 +50,19 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentSettingDeviceBinding.inflate(inflater, container, false);
-
         binding.listSettingView.setOnItemClickListener(this);
-        showSetting("");
+        showSetting();
         return binding.getRoot();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void showSetting(String setting) {
+    private void showSetting() {
+        //Toast.makeText(context, ""+device.toString(), Toast.LENGTH_SHORT).show();
         String[] settings = Device.setDeviceObject(device.toString());
-        for (int i = 0; i < settings.length; i++) {
-            strings.add(new Setting(settings[i]));
+        final AssetManager mgr = context.getAssets();
+        for (String list: Device.assetFiles(mgr,device.toString().toLowerCase())) {
+            strings.add(new Setting(list));
         }
         settingAdapter = new SettingAdapter(context, R.layout.iteam_setting, strings);
         binding.listSettingView.setAdapter(settingAdapter);
@@ -75,8 +71,6 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
     @Override
@@ -84,11 +78,10 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
         super.onDestroyView();
         binding = null;
     }
-
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //  Toast.makeText(context,"Setting name"+settingAdapter.getItem(position).getSetting(),Toast.LENGTH_LONG).show();
-        mainActivityInterface.deviceInstruction("");
+        mainActivityInterface.deviceInstruction(device.toString().toLowerCase()+"/"+settingAdapter.getItem(position).getSetting());
 
     }
 }

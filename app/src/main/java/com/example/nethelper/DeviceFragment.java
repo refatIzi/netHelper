@@ -2,6 +2,7 @@ package com.example.nethelper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,18 +35,14 @@ public class DeviceFragment extends Fragment implements AdapterView.OnItemClickL
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentDeviceBinding.inflate(inflater, container, false);
         devices.add(new Device("Cisco"));
-        devices.add(new Device("Cisco ASA"));
-        devices.add(new Device("Cisco FMC"));
         devices.add(new Device("Foxgate"));
         devices.add(new Device("Mikrotik"));
         deviceAdapter = new DeviceAdapter(context, R.layout.iteam_device,devices);
         binding.listDevice.setAdapter(deviceAdapter);
         binding.listDevice.setOnItemClickListener(this);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
