@@ -1,0 +1,124 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 23.1.0"/>
+    <title></title>
+    <style type="text/css">
+        body { font-family:Calibri; font-size:12pt }p { margin:0pt }.NormalWeb { margin-top:5pt; margin-bottom:5pt; line-height:normal; font-family:'Times New Roman'; font-size:12pt }
+    </style>
+</head>
+<body>
+<div><p style="text-indent:21.3pt; text-align:center; widows:0; orphans:0"><span
+        style="font-family:Arial; font-weight:bold">НАЛАШТУВАННЯ </span><span
+        style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;</span><span
+        style="font-family:Arial; font-weight:bold; text-decoration:underline">МАРШРУТИЗАЦІЇ</span><span
+        style="font-family:Arial; font-weight:bold">.</span></p>
+    <p style="text-indent:21.3pt; text-align:center; widows:0; orphans:0"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; font-weight:bold">1. Налаштування</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">статичної маршрутизації</span></p>
+    <p><img src="images/Aspose.Words.be3eaf3a-c25f-4040-9e24-e74df5513d62.001.png" width="666"
+            height="254" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="text-indent:35.4pt; text-align:justify"><span
+            style="font-family:Arial; font-style:italic">Налаштування показані для Router0</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">ip route 0.0.0.0 0.0.0.0 serial 0/0/0</span><span
+            style="font-family:Arial"> (</span><span style="font-family:Arial; font-style:italic">маршрут за замовчуванням</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">ip route 20.20.20.0 255.255.255.0 serial 0/0/0</span><span
+            style="font-family:Arial"> (</span><span style="font-family:Arial; font-style:italic">статичний маршрут до мережі 20.20.20.0 через інтерфейс serial 0/0/0 – напряму підключений маршрут</span><span
+            style="font-family:Arial">)</span></p>
+    <p><span style="font-family:Arial">Router0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">ip route 172.16.0.0 255.255.255.0 serial 0/0/0 </span>
+    </p>
+    <p style="text-indent:35.45pt"><span style="font-family:Arial">інший варіант</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">ip route 20.20.20.0 255.255.255.0 10.10.10.2 </span><span
+            style="font-family:Arial; font-style:italic">(маршрут наступного переходу (рекурсивний маршрут))</span>
+    </p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">2. Налаштування динамічної маршрутизації OSPF (пошук оптимального каналу)</span>
+    </p>
+    <p><img src="images/Aspose.Words.be3eaf3a-c25f-4040-9e24-e74df5513d62.002.png" width="700"
+            height="343" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="text-indent:35.4pt; text-align:justify"><span
+            style="font-family:Arial; font-style:italic">Налаштування показані для Router0</span>
+    </p>
+    <p><span style="font-family:Arial">R0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">router ospf 1</span><span
+            style="font-family:Arial"> </span><span
+            style="font-family:Arial; font-size:13pt; font-style:italic">(вмикання протоколу OSPF, де 1 – номер процесу OSPF)</span>
+    </p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">network 192.168.50.0</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">0.0.0.255</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">area 1</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">network 10.10.00.0</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">0.0.0.255</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">area 1 </span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">network 30.30.30.0</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">0.0.0.255</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">area 1</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:center"><span style="font-family:Arial; font-weight:bold">Налаштування динамічної маршрутизації RIP</span>
+    </p>
+    <p style="text-align:center"><span
+            style="height:0pt; text-align:left; display:block; position:absolute; z-index:0"><img
+            src="images/Aspose.Words.be3eaf3a-c25f-4040-9e24-e74df5513d62.003.png" width="628"
+            height="298" alt=""
+            style="margin-top:12.5pt; margin-left:18.6pt; -aw-left-pos:18.6pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:12.5pt; -aw-wrap-type:none; position:absolute"/></span><span
+            style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p style="margin-top:40pt; margin-bottom:14pt;  text-align:center"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:center"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:center"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:center"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial">R0(config)# </span><span
+            style="font-family:Arial; font-weight:bold">router rip</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">version 2</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">network 10.0.0.0</span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">network 192.168.0.0</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">R0(config-router)# </span><span
+            style="font-family:Arial; font-weight:bold">passive-interface fastEthernet 0/0</span><span
+            style="font-family:Arial"> – інтерфейс, через який не відправляються дані маршрутизації</span>
+    </p>
+    <p><span style="-aw-import:ignore">&#xa0;</span></p></div>
+</body>
+</html>

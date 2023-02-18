@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 23.1.0"/>
+    <title></title>
+    <style type="text/css">body { font-family:Calibri; font-size:12pt }p { margin:0pt }
+    </style>
+</head>
+<body>
+<div><p style="text-align:center"><span
+        style="font-family:Arial; font-weight:bold; text-decoration:underline">Налаштування доступу за протоколом SSH:</span>
+</p>
+    <p style="text-align:justify"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">1. Створити користувача з ім'ям та паролем. </span>
+    </p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">username </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">netadmin</span><span
+            style="font-family:Arial; font-weight:bold"> secret </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Cisco</span>
+    </p>
+    <p><span style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">2. Налаштувати лінії віртуального терміналу. </span>
+    </p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">line vty 0 15</span></p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">password </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">cisco12345</span>
+    </p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">login local</span></p>
+    <p style="text-indent:35.45pt"><span style="font-family:Arial; font-weight:bold">transport input ssh</span>
+    </p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">exec-timeout </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">60</span><span
+            style="font-family:Arial"> (після 60 хвилин без руху з’єднання закривається)</span></p>
+    <p style="text-indent:35.45pt"><span style="font-family:Arial; font-weight:bold">exit</span></p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">4. Створити доменне ім’я та ключ шифрування. </span>
+    </p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p style="text-indent:35.45pt"><span style="font-family:Arial; font-weight:bold">no ip domain-lookup </span><span
+            style="font-family:Arial; font-style:italic">(відключає пошук по</span><span
+            style="font-family:Arial; font-style:italic">&#xa0;</span><span
+            style="font-family:Arial; font-style:italic">DNS)</span></p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">ip domain-name </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Cisco.net</span><span
+            style="font-family:Arial; font-weight:bold"> </span><span
+            style="font-family:Arial; font-style:italic">(ствоює доменне ім’я пристрою)</span></p>
+    <p style="text-indent:35.45pt; text-align:justify"><span
+            style="font-family:Arial; font-weight:bold">login block-for 120 attempts 2 within 30 </span><span
+            style="font-family:Arial; font-style:italic">(блокування на 120 секунд після 2-х невдалих спроб за 30 секунд)</span>
+    </p>
+    <p style="text-indent:35.45pt"><span style="font-family:Arial; font-weight:bold">crypto key generate rsa </span><span
+            style="font-family:Arial; font-style:italic">(генерує ключ шифрування)</span></p>
+    <p style="text-indent:35.45pt"><span
+            style="font-family:Arial; font-weight:bold">1024 </span><span
+            style="font-family:Arial; font-style:italic">(довжина ключа в бітах)</span></p>
+    <p><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial">Для доступу з ПК слід використати програму емуляції терміналу (наприклад PUTTY), або у командному рядку набрати </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic">ssh -l netadmin 192.168.0.10</span>
+    </p>
+    <p><span style="-aw-import:ignore">&#xa0;</span></p></div>
+</body>
+</html>

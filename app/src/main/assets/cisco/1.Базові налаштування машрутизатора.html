@@ -1,0 +1,172 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 23.1.0"/>
+    <title></title>
+    <style type="text/css">body { font-family:Calibri; font-size:12pt }p { margin:0pt }
+    </style>
+</head>
+<body>
+<div><p style="text-align:justify; widows:0; orphans:0"><span
+        style="font-family:Arial; font-weight:bold">БАЗОВІ </span><span
+        style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;</span><span
+        style="font-family:Arial; font-weight:bold">НАЛАШТУВАННЯ </span><span
+        style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;</span><span
+        style="font-family:Arial; font-weight:bold; text-decoration:underline">МАРШРУТИЗАТОРА</span><span
+        style="font-family:Arial; font-weight:bold">.</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify">
+        <span>1. Зайдіть у привілейований режим </span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">Router&gt; </span><span
+            style="font-family:Arial; font-weight:bold">enable</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">Router # </span></p>
+    <p style="text-align:justify"><span style="-aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:justify"><span>2. Зайдіть у режим глобальної конфігурації</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">Router # </span><span
+            style="font-family:Arial; font-weight:bold">configure terminal</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">Router (confіg)#</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span>3. Задайте ім’я маршрутизатора</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">Router (confіg)#</span><span
+            style="font-family:Arial; font-weight:bold"> hostname</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">ім’я</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(наприклад R1)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span>4. Встановіть пароль для доступу до привілейованого режиму EXEC.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg)#</span><span
+            style="font-family:Arial; font-weight:bold"> enable secret </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">пароль</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(наприклад class)</span>
+    </p>
+    <p style="text-align:justify"><span style="-aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:justify"><span>5. Встановіть пароль для доступу по консольній лінії.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg)#</span><span
+            style="font-family:Arial; font-weight:bold"> lіne</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">console</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">0</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg-lіne)#</span><span
+            style="font-family:Arial; font-weight:bold"> password</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">пароль</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(наприклад cisco)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg-lіne)#</span><span
+            style="font-family:Arial; font-weight:bold"> logіn </span><span
+            style="font-family:Arial; font-style:italic">(команда потрібна для запиту пароля)</span>
+    </p>
+    <p style="text-align:justify"><span style="-aw-import:ignore">&#xa0;</span>
+    </p>
+    <p style="text-align:justify"><span>6. Встановіть пароль для доступу по лініях віртуального терміналу (VTY) для віддаленого управління по протоколах SSH та Telnet.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg)#</span><span
+            style="font-family:Arial; font-weight:bold"> lіne</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">vty</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">0 </span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0;</span><span
+            style="font-family:Arial; font-weight:bold">15</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg-lіne)#</span><span
+            style="font-family:Arial; font-weight:bold"> password</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">пароль</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(наприклад cisco)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg-lіne)#</span><span
+            style="font-family:Arial; font-weight:bold"> logіn </span><span
+            style="font-family:Arial; font-style:italic">(команда потрібна для запиту пароля)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify"><span>7. Зашифруйте всі паролі.</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> service password-encryption</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span>8. Налаштуйте баннер MOTD (повідомлення дня) з правовим повідомленням.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(confіg)#</span><span
+            style="font-family:Arial; font-weight:bold"> banner motd "</span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Текст повідомлення</span><span
+            style="font-family:Arial; font-weight:bold">" </span><span
+            style="font-family:Arial; font-style:italic">(наприклад Authorіzed Access Only!) (текст може бути виділений “ ” або $ $)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span>9. Налаштуйте інтерфейси маршрутизатора.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">g0/0</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">ip</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">address</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">192.168.10.1</span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline; -aw-import:spaces">&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">255.255.255.0</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">description</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">опис</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(наприклад IT Department LAN)</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">no</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">shutdown </span><span
+            style="font-family:Arial; font-style:italic">(команда активує інтерфейс)</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span>10. Вийдіть з режиму глобальної конфігурації у привілейований режим.</span>
+    </p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold; -aw-import:spaces">&#xa0; </span><span
+            style="font-family:Arial; font-weight:bold">end</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span
+            style="-aw-import:ignore">&#xa0;</span></p>
+    <p style="text-align:justify; widows:0; orphans:0"><span>11. Збережіть настроювання в NVRAM.</span>
+    </p>
+    <p style=" text-align:justify; widows:0; orphans:0"><span style="font-family:Arial">R1#</span><span style="font-family:Arial; font-weight:bold"> copy runnіng-confіg startup-confіg</span>
+    </p></div>
+</body>
+</html>

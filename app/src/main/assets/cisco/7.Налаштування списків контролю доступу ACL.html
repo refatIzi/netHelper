@@ -1,0 +1,183 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 23.1.0"/>
+    <title></title>
+    <style type="text/css">
+        body { font-family:Calibri; font-size:12pt }p { margin:0pt }table { margin-top:0pt; margin-bottom:0pt }.TableGrid {  }
+    </style>
+</head>
+<body>
+<div><p style="text-align:center"><span style="font-family:Arial; font-weight:bold">Налаштування списків контролю доступу ACL </span>
+</p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Налаштування стандартного нумерованого ACL</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)# </span><span
+            style="font-family:Arial; font-weight:bold">access-list 1 deny host 192.168.10.10 </span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)# </span><span
+            style="font-family:Arial; font-weight:bold">access-list 1 permit 192.168.10.0 0.0.0.255</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface serial 0/0/0</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-group 1 out </span></p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Налаштування стандартного іменованого ACL</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-list standart Filter_LAN1</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-std-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> deny host 192.168.10.10 </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-std-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> permit any</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-std-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> exit</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface G0/0</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-group Filter_LAN1 out</span></p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Налаштування розширеного нумерованого ACL</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> access-list 110 deny tcp host 192.168.0.1 any eq 80</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> access-list 110 deny tcp 192.168.0.128 0.0.0.127 gt 1024 any eq 80</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> access-list 110 permit ip any any </span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface fa0/0</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-group 110 in</span></p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Налаштування розширеного іменованого ACL</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-list extended MY_ACL</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-ext-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> deny tcp host 192.168.0.1 any eq 80</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-ext-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> permit ip any any</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-ext-nacl)#</span><span
+            style="font-family:Arial; font-weight:bold"> exit</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface fa0/0</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold"> ip access-group MY_ACL in</span></p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Видалення ACL-списку</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> interface serial0/0/0</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold"> no ip access-group 1 out</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">R1(config)#</span><span
+            style="font-family:Arial; font-weight:bold"> no access-list 1</span></p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span
+            style="font-family:Arial; font-weight:bold; font-style:italic; text-decoration:underline">Перегляд ACL-списку</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">show running-config – </span><span
+            style="font-family:Arial; font-style:italic">переглянути всі ACL-списки</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">show access-lists – </span><span
+            style="font-family:Arial; font-style:italic">переглянути всі ACL-списки</span><span
+            style="font-family:Arial; font-weight:bold"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">show running-config | include access-list 110 – </span><span
+            style="font-family:Arial; font-style:italic">переглянути 110 ACL-список</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">show access-list 110 – </span><span
+            style="font-family:Arial; font-style:italic">переглянути ACL-список з номером 110</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial; font-weight:bold">show ip intreface g0/0 – </span><span
+            style="font-family:Arial; font-style:italic">переглянути ACL-список на певному інтерфейсі</span>
+    </p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <table cellspacing="0" cellpadding="0" class="TableGrid"
+           style="border:0.75pt solid #000000; -aw-border:0.5pt single; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+        <tr>
+            <td style="width:200.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">deny – </span><span
+                        style="font-family:Arial; font-style:italic">забороняє доступ </span></p>
+            </td>
+            <td style="width:322.3pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">eq</span><span
+                        style="font-family:Arial"> – </span><span
+                        style="font-family:Arial; font-style:italic">тільки пакети з цим номером порта</span>
+                </p></td>
+        </tr>
+        <tr>
+            <td style="width:200.15pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">permit – </span><span
+                        style="font-family:Arial; font-style:italic">дозволяє доступ </span></p>
+            </td>
+            <td style="width:322.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">gt</span><span
+                        style="font-family:Arial"> – </span><span
+                        style="font-family:Arial; font-style:italic">тільки пакети з більшим номером порта</span>
+                </p></td>
+        </tr>
+        <tr>
+            <td style="width:200.15pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">host – </span><span
+                        style="font-family:Arial; font-style:italic">конкретний вузол</span></p>
+            </td>
+            <td style="width:322.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">lt</span><span
+                        style="font-family:Arial"> – </span><span
+                        style="font-family:Arial; font-style:italic">тільки пакети з меншим номером порта</span>
+                </p></td>
+        </tr>
+        <tr>
+            <td style="width:200.15pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">any – </span><span
+                        style="font-family:Arial; font-style:italic">всі вузли</span></p></td>
+            <td style="width:322.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">neq</span><span
+                        style="font-family:Arial"> – </span><span
+                        style="font-family:Arial; font-style:italic">тільки пакети не з даним номером порта</span>
+                </p></td>
+        </tr>
+        <tr>
+            <td style="width:200.15pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span>
+                </p></td>
+            <td style="width:322.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
+                <p style="text-align:justify; font-size:14pt"><span
+                        style="font-family:Arial; font-weight:bold">range</span><span
+                        style="font-family:Arial"> – </span><span
+                        style="font-family:Arial; font-style:italic">діапазон портів</span></p></td>
+        </tr>
+    </table>
+    <p style="text-align:justify; font-size:7pt"><span style="font-family:Arial; -aw-import:ignore">&#xa0;</span>
+    </p>
+    <p><span style="-aw-import:ignore">&#xa0;</span></p></div>
+</body>
+</html>

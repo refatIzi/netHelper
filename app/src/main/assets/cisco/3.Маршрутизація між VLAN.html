@@ -1,0 +1,153 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 23.1.0"/>
+    <title></title>
+    <style type="text/css">body { font-family:Calibri; font-size:12pt }p { margin:0pt }
+    </style>
+</head>
+<body>
+<div><p style="text-align:center"><span
+        style="height:0pt; text-align:left; display:block; position:absolute; z-index:-1"><img
+        src="images/Aspose.Words.482b6fab-32fb-4804-8778-7fe32e118f05.223.png" width="708"
+        height="280" alt=""
+        style="margin-top:-1.43pt; margin-left:-8.94pt; -aw-left-pos:-8.94pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-1.43pt; -aw-wrap-type:none; position:absolute"/></span><span
+        style="font-family:Arial; font-weight:bold">Маршрутизація між VLAN</span></p>
+    <p style="margin-top:140pt; margin-bottom:14pt; font-size:24pt"><span
+            style="font-family:Arial; font-weight:bold; font-style:italic">Налаштування комутатора</span>
+    </p>
+    <p><span style="font-family:Arial">Switch&gt; </span><span
+            style="font-family:Arial; font-weight:bold">enable</span><span
+            style="font-family:Arial; -aw-import:spaces">&#xa0; </span></p>
+    <p><span style="font-family:Arial">Switch# </span><span
+            style="font-family:Arial; font-weight:bold">configure terminal</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">vlan 100</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(створюємо VLAN №100)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-vlan)# </span><span
+            style="font-family:Arial; font-weight:bold">name PC0 </span><span
+            style="font-family:Arial; font-style:italic">(присвоюємо їй ім’я «PC0»)</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config-vlan)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">vlan 200</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(створюємо VLAN №200)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-vlan)# </span><span
+            style="font-family:Arial; font-weight:bold">name PC1</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(присвоюємо їй ім’я «PC1»)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-vlan)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface f0/1</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">switchport mode access</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(перемикання порта в режим доступу) </span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">switchport access vlan 100</span><span
+            style="font-family:Arial"> </span><span
+            style="font-family:Arial; font-size:13pt; font-style:italic">(приналежність порта до VLAN 100)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface f0/2</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">switchport mode access</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(перемикання порта в режим доступу)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">switchport access vlan 200</span><span
+            style="font-family:Arial"> </span><span
+            style="font-family:Arial; font-size:13pt; font-style:italic">(приналежність порта до VLAN 200)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface g0/1</span><span
+            style="font-family:Arial"> </span></p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">switchport mode trunk</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(перемикання порта в режим trunk)</span>
+    </p>
+    <p><span style="font-family:Arial">Switch(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span></p>
+    <p><span style="font-family:Arial">Switch(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface f0/10</span></p>
+    <p><span style="font-family:Arial">Switch(config-if)#</span><span
+            style="font-family:Arial; font-weight:bold">switchport trunk native vlan 5</span></p>
+    <p><span style="font-family:Arial; font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
+    <p><span style="font-family:Arial; font-weight:bold; font-style:italic">Налаштування маршрутизатора</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router&gt; </span><span
+            style="font-family:Arial; font-weight:bold">enable</span><span
+            style="font-family:Arial; -aw-import:spaces">&#xa0; </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router# </span><span
+            style="font-family:Arial; font-weight:bold">configure terminal</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-weight:bold">gigabitEthernet</span><span
+            style="font-family:Arial"> </span><span
+            style="font-family:Arial; font-weight:bold">0/0</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">no shutdown</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(включення интерфейсу)</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-if)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config)# </span><span
+            style="font-family:Arial; font-weight:bold">interface</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-weight:bold">gigabitEthernet</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-weight:bold">0/0.100</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(створення підінтерфейсу 100)</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">encapsulation dot1Q 100</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(вмикання інкапсуляції dot1Q та</span>
+    </p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-style:italic; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-style:italic; -aw-import:spaces">&#xa0;</span><span
+            style="font-family:Arial; font-style:italic">підключення до VLAN 100)</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">ip address 192.168.0.1 255.255.255.0</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config</span><span
+            style="font-family:Arial; font-weight:bold">)</span><span
+            style="font-family:Arial">#</span><span style="font-family:Arial; font-weight:bold"> interface gigabitEthernet</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-weight:bold">0/0.200</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(створення підінтерфейсу 200)</span>
+    </p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">encapsulation dot1Q 200</span><span
+            style="font-family:Arial"> </span><span style="font-family:Arial; font-style:italic">(вмикання інкапсуляції dot1Q та</span>
+    </p>
+    <p style="text-align:justify"><span
+            style="font-family:Arial; font-style:italic; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span
+            style="font-family:Arial; font-style:italic">підключення до VLAN 200)</span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">ip address 172.16.0.1 255.255.255.0</span><span
+            style="font-family:Arial"> </span></p>
+    <p style="text-align:justify"><span style="font-family:Arial">Router(config-subif)# </span><span
+            style="font-family:Arial; font-weight:bold">exit</span></p>
+    <p><span style="-aw-import:ignore">&#xa0;</span></p></div>
+</body>
+</html>
