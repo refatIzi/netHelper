@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
     >
 
     <TextView
@@ -14,9 +17,10 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
+        android:paddingBottom="15dp"
         android:text="TextView"
-        android:textColor="#54585b"
-        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textSize="30dp"
         android:typeface="monospace" />
 
 </RelativeLayout>

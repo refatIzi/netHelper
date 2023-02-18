@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 22.7.0"/>
+    <title>Рекомендації по налаштуванню роутерів Mikrotik</title></head>
+<body style="font-family:'Times New Roman'; font-size:12pt">
+<div><p style="margin-top:16.35pt; margin-bottom:0pt; text-align:justify; line-height:12.25pt"><span
+        style="font-family:Arial; font-size:11pt; font-weight:bold">Як налаштувати параметри збереження подій</span>
+</p>
+    <ol type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:0.05pt; margin-right:80.15pt; margin-left:30.93pt; line-height:14.5pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>Перейти в вікно Logging для налаштування правил збереження подій (System-&gt;Logging)</span>
+        </li>
+    </ol>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.001.jpeg" width="258" height="273" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <ol start="2" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:2.4pt; margin-right:8.35pt; margin-left:30.93pt; line-height:14.5pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>Створити нове правило для збереження системних подій рівня “critical” та “error” на диск маршрутизатора. Встановити для таких подій префікс “SYS-ERR”.</span>
+        </li>
+    </ol>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.002.jpeg" width="238" height="260" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <ol start="3" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:2.4pt; margin-right:43.55pt; margin-left:30.93pt; line-height:14.5pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>Створити нове правило для збереження системних подій рівня “info” на диск маршрутизатора. Встановити для таких подій префікс “SYS-INFO”.</span>
+        </li>
+    </ol>
+    <p style="margin-top:17.5pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.003.jpeg" width="267" height="297" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:16.35pt; margin-bottom:0pt; text-align:justify; line-height:12.25pt"><br
+            style="page-break-before:always; clear:both"/><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold">Як обмежити доступ до локальних мереж тільки з MAC-адрес дозволених пристроїв</span>
+    </p>
+    <ol type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:16.85pt; margin-left:30.93pt; text-align:justify; line-height:12.25pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span style="font-weight:bold">Зареєструвати на DHCP сервері список дозволених пристроїв</span>
+        </li>
+    </ol>
+    <p style="margin:0.05pt 24.25pt 0pt 35.25pt; text-indent:-18pt; line-height:14.5pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">для цього необхідно підключитись Winbox на маршрутизатор, який виконує роль DHCP-сервера, відкрити вікно налаштувань DHCP Server (IP-&gt;DHCP Server) та перейти на вкладку Leases.</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.004.jpeg" width="414" height="410" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:4.65pt; margin-left:35.25pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; line-height:12.25pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">зареєструвати MAC-адреси пристроїв та закріпити за ними постійні IP-адреси</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.005.jpeg" width="310" height="351" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <ol start="2" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin:14.1pt 19.8pt 16.85pt 30.93pt; line-height:14.5pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span style="font-weight:bold">Налаштувати DHCP-сервер на видачу адрес тільки зі встановленого списку MAC-адрес/IP-адрес</span>
+        </li>
+    </ol>
+    <p style="margin-top:0.05pt; margin-left:0pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; line-height:12.25pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">в вікні налаштувань “DHCP Server” перейти на вкладку “DHCP”</span>
+    </p>
+    <p style="margin:0.05pt 31.15pt 0pt 36pt; text-indent:-18pt; line-height:14.5pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">для DHCP </span><span
+            style="font-family:Arial; font-size:11pt; letter-spacing:0.05pt">Server’а</span><span
+            style="font-family:Arial; font-size:11pt"> та відкрити вікно налаштувань для моста локальної мережі роутера;</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:2.4pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.006.png" width="428" height="105" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin:2.3pt 33.2pt 0pt 36pt; text-indent:-18pt; line-height:14.5pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">у вікні налаштувань DHCP-сервера встановити для опції “Addresses” значення “static-only”;</span>
+    </p>
+    <p style="margin-top:2.3pt; margin-left:0pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; line-height:12.25pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">в налаштуваннях DHCP Server встановити опцію “Add ARP For Leases”;</span>
+    </p>
+    <p style="margin-top:18pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.007.jpeg" width="321" height="402" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:16.9pt; margin-left:0pt; margin-bottom:0pt; text-indent:-18pt; line-height:14.5pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">перейти у вікно налаштувань моста (Bridge, </span><span
+            style="font-family:Arial; font-size:11pt; letter-spacing:0.05pt">вкладка</span><span
+            style="font-family:Arial; font-size:11pt"> Bridge) та відкрити налаштування відповідного моста</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.008.jpeg" width="380" height="144" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:16.35pt; margin-left:0pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; line-height:12.25pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:'-'; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:15.16pt">
+        <span style="-aw-import:ignore"><span
+                style="font-family:Arial; font-size:11pt">-</span><span
+                style="width:15.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span></span><span
+            style="font-family:Arial; font-size:11pt">в налаштуваннях bridge-интерфейса встановити для опції “ARP” значення “reply-only”.</span>
+    </p>
+    <p style="margin-top:18pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.009.jpeg" width="466" height="371" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:31.45pt; margin-bottom:0pt; text-align:justify; line-height:14.5pt"><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">УВАГА!!!</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:5.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">Якщо</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:5.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">в</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:5.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">мережі</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:5.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">використовуються</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:4.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">вузли,</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:4.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">які</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:4.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">потребують</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:4.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">наявності статичної</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">адреси</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">та</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">мають</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">бути</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">доступні</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">навіть</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">в</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">разі</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">недоступності</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">DHCP сервера</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:8.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">рекомендовано</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:8.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">такі</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:7.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">вузли</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:7.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">зареєструвати</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:7.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">статичними</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:7.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">записами</span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic; letter-spacing:7.5pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold; font-style:italic">в ARP-таблиці маршрутизатора</span>
+    </p>
+    <p style="margin-top:0.05pt; margin-bottom:0pt; line-height:14.5pt"><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">Для</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">цього</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:3pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">потрібно</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">перейти</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">в</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">вікно</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">ARP</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">та</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">додати</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">відповідні</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">записи</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">в</span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic; letter-spacing:2.25pt"> </span><span
+            style="font-family:Arial; font-size:11pt; font-style:italic">ARP-таблицю маршрутизатора та зробити її статичною.</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.010.jpeg" width="452" height="343" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <p style="margin-top:16.35pt; margin-bottom:0pt; text-align:justify; line-height:12.25pt"><span
+            style="font-family:Arial; font-size:11pt; font-weight:bold">Як обмежити доступ до сервісів управління маршрутизатором Mikrotik</span>
+    </p>
+    <ol type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:16.85pt; margin-left:30.93pt; text-align:justify; line-height:12.25pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>Відкрити вікно “IP Service List” (IP-&gt;Services).</span></li>
+    </ol>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.011.jpeg" width="390" height="330" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <ol start="2" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:2.35pt; margin-right:33.85pt; margin-left:30.93pt; line-height:14.5pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>У вікні “IP Service List” почергово відключити всі сервіси, окрім сервісів “ssh” та “winbox”</span>
+        </li>
+    </ol>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify; font-size:11pt">
+        <img src="images/Recomendation Mikrotik.012.jpeg" width="338" height="203" alt=""
+             style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/><span
+            style="font-family:Arial; letter-spacing:1.5pt"> </span><span style="font-family:Arial">або</span>
+    </p>
+    <p style="margin-top:3.45pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.013.jpeg" width="340" height="203" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p>
+    <ol start="3" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="margin-top:4.65pt; margin-left:30.93pt; text-align:justify; line-height:12.25pt; padding-left:5.07pt; font-family:Arial; font-size:11pt">
+            <span>Обмежити доступ до сервісів “ssh” та “winbox” тільки з IP-адрес адміністраторів мереж.</span>
+        </li>
+    </ol>
+    <p style="margin-top:17.5pt; margin-left:0pt; margin-bottom:0pt; text-align:justify"><img
+            src="images/Recomendation Mikrotik.014.jpeg" width="390" height="234" alt=""
+            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"/>
+    </p></div>
+</body>
+</html>

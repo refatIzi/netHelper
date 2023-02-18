@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+
     >
 
     <TextView
@@ -16,7 +18,7 @@
         android:layout_marginRight="5dp"
         android:gravity="center|left"
         android:text="TextView"
-        android:textColor="#54585b"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:typeface="monospace" />
 

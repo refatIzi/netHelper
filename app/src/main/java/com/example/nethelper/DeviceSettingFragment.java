@@ -63,6 +63,7 @@ public class DeviceSettingFragment extends Fragment implements AdapterView.OnIte
         final AssetManager mgr = context.getAssets();
         for (String list: Device.assetFiles(mgr,device.toString().toLowerCase())) {
             strings.add(new Setting(list));
+
         }
         settingAdapter = new SettingAdapter(context, R.layout.iteam_setting, strings);
         binding.listSettingView.setAdapter(settingAdapter);
